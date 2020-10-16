@@ -1,0 +1,24 @@
+{
+  "name": "restauraunts---sequelize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RachaelSmethills/Restauraunts---Sequelize.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RachaelSmethills/Restauraunts---Sequelize/issues"
+  },
+  "homepage": "https://github.com/RachaelSmethills/Restauraunts---Sequelize#readme",
+  "dependencies": {
+    "jest": "^26.5.3",
+    "sequelize": "^6.3.5",
+    "sqlite3": "^5.0.0"
+  }
+}
