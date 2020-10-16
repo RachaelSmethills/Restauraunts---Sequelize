@@ -1,5 +1,7 @@
 const { Sequelize, Model, DataTypes } = require('sequelize')
-const sequelize = new Sequelize('sqlite::memory:')
+const sequelize = new Sequelize('sqlite::memory:', {
+    logging: false
+})
 
 class Restaurant extends Model {}
 class Menu extends Model {}
@@ -20,7 +22,11 @@ Item.init({
     price: DataTypes.DECIMAL
 }, { sequelize, modelName: 'item' })
 
+Restaurant.hasMany(Menu);
+Menu.belongsTo(Restaurant);
 
+Menu.hasMany(Item);
+Item.belongsTo(Menu);
 
 module.exports = {
     Restaurant,
