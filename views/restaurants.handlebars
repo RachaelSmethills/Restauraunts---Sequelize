@@ -1,0 +1,51 @@
+<link rel="stylesheet" type="text/css" href="restaurant.css"/>
+<section>
+{{#each restaurants}}
+<article>
+    <div class="card" style="background-image: URL({{this.image}});">
+        <div id="res-{{this.id}}" class="contentBx">
+            <h3>{{this.name}}</h3>
+            <div class="menus">
+            {{#each this.menus}}
+                <h2>
+                    <a href="/menu/{{this.id}}">{{this.title}}</a>
+
+                </h2>
+            {{/each}}
+            </div>
+            <a class="addMenu" onClick="toggleEdit({{this.id}})">Edit</a>
+            <a class="addMenu" onClick="toggleDelete({{this.id}})">Delete</a>
+        </div>
+        {{> editRestaurant}}
+        {{> deleteRestaurant}}
+    </div>
+
+</article>
+{{/each}}
+
+<article>
+    <div class="cardfull">
+        <div class="contentBx">
+            <h3></h3>
+            <div class="menus">
+                <form action="/restaurant/add" method="POST">
+                    <div>
+                        <label>Restaurant name</label>
+                        <input required name="name" />
+                    </div>
+                    <div>
+                        <label>Restaurant image</label>
+                        <input required name="image" />
+                    </div>
+                    <button class="btn">Add Restaurant</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</article>
+
+<script>
+    Handlebars.registerPartial('editRestaurant');
+    Handlebars.registerPartial('deleteRestaurant');
+</script>

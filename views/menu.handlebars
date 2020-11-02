@@ -1,0 +1,21 @@
+
+<link rel="stylesheet" type="text/css" href="/restaurant.css"/>
+
+<article>
+    <div class="card" style="background-image: URL({{this.image}});">
+            <div class="contentBx">
+        <h2>{{menu.title}}</h2>
+        <div class="menus">
+        {{#each menu.items}}
+            <h2>
+                {{this.name}}
+            </h2>
+            <h2>
+                {{this.price}}
+            </h2>
+        {{/each}}
+        </div>
+    </div>
+    </div>
+
+</article>

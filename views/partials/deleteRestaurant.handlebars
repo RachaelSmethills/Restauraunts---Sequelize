@@ -1,0 +1,17 @@
+<div id="res-delete-form-{{this.id}}" class="contentBx" style="display: none;">
+    <div class="menus">
+        <form action="/restaurant/{{this.id}}/delete" method="POST">
+            <button class="addMenu">Confirm</button>
+            <a class="addMenu" href="/">Cancel</a>
+        </form>
+    </div>
+    
+</div>
+
+
+<script>
+    function toggleDelete(resId) {
+        document.getElementById("res-" + resId).style.display = "none"
+        document.getElementById("res-delete-form-" + resId).style.display = "flex"
+    }
+</script>

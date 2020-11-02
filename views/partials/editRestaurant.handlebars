@@ -1,0 +1,24 @@
+<div id="res-form-{{this.id}}" class="contentBx" style="display: none;">
+    <div class="menus">
+        <form action="/restaurants/{{this.id}}/edit" method="POST">
+            <div>
+                <label>Restaurant name</label>
+                <input name="name" value="{{this.name}}" />
+            </div>
+            <div>
+                <label>Restaurant image</label>
+                <input name="image" value="{{this.image}}"/>
+            </div>
+            <button class="addMenu">Update Restaurant</button>
+            <a class="addMenu" href="/">Cancel</a>
+        </form>
+    </div>
+    
+</div>
+
+<script>
+    function toggleEdit(resId) {
+        document.getElementById("res-" + resId).style.display = "none"
+        document.getElementById("res-form-" + resId).style.display = "flex"
+    }
+</script>
